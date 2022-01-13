@@ -1,12 +1,25 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Contact from "./pages/Contact";
 import reportWebVitals from './reportWebVitals';
+
+export default function MainApp() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MainApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
