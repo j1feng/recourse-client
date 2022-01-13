@@ -8,12 +8,13 @@ function App() {
     <div className="App">
       <header className="App-header">
         <br />
-        <img alt = ' ' src="https://datascience.ucsd.edu/wp-content/uploads/2020/05/berk-ustun-scaled.jpg" width="10%"/ >
-        <p>Actionable Recourse</p>
+        <h2>Actionable Recourse</h2>
         <ExampleButton />
         <br />
         <MyForm />
-        <br /><br /><br /><Link to="/contact">Contact</Link>
+        <br />
+        <p>Need to work on the design </p>
+        <br /><br /><br /><Link to="/contact">Contact (testing routing)</Link>
       </header>
     </div>
   );

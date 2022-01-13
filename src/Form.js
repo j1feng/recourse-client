@@ -13,7 +13,7 @@ let MyForm = () => {
     }
     return (
       <form className="form">
-        <label>Please input your yearly salary: &nbsp;&nbsp;    
+        <label>[Example] Please input your yearly salary: &nbsp;&nbsp;    
         <br /><br />
         <input type="range" min="0" max="200000" class="slider" 
             id="salaryRange" onChange = {updateSlider}></input>
