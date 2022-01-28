@@ -226,8 +226,7 @@ let ActionForm = () => {
                     <button onClick={() => {
                         return httpGetAsync("https://recourse-api.herokuapp.com/recourse",
                             changeTable);
-                    }}
-                    value="Get My Recourse Action Set! " />
+                    }}> Show Action Set </button>
                     <button onClick={() => {
                         document.getElementById('button_result_table').innerHTML = null;
                     }}> Hide Action Set </button>
