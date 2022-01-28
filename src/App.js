@@ -1,7 +1,7 @@
 import './App.css';
-import ExampleButton from './ExampleButton.js';
-import MyForm from './Form.js';
-import { Outlet, Link } from "react-router-dom";
+import SubmitButton from './SubmitButtom.js';
+import ActionForm from './Form.js';
+import { Link } from "react-router-dom";
 
 function App() {
   return (
@@ -9,9 +9,9 @@ function App() {
       <header className="App-header">
         <br />
         <h2>Actionable Recourse</h2>
-        <ExampleButton />
+        <ActionForm />
         <br />
-        <MyForm />
+        <div id='button_result_table'></div>
         <br />
         <p>Need to work on the design </p>
         <br /><br /><br /><Link to="/contact">Contact (testing routing)</Link>

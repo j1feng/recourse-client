@@ -1,4 +1,4 @@
-let ExampleButton = () => {
+let SubmitButton = () => {
     
     function httpGetAsync(theUrl, callback){
       var xmlHttp = new XMLHttpRequest();
@@ -32,4 +32,4 @@ let ExampleButton = () => {
       </div>
   }
 
-export default ExampleButton;
+export default SubmitButton;
