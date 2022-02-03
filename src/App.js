@@ -13,7 +13,6 @@ function App() {
         <br />
         <div id='button_result_table'></div>
         <br />
-        <p>Need to work on the design </p>
         <br /><br /><br /><Link to="/contact">Contact (testing routing)</Link>
       </header>
     </div>
