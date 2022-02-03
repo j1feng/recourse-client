@@ -7,14 +7,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <br />
         <h2>Actionable Recourse</h2>
-        <ActionForm />
+      </header>
+      <ActionForm />
         <br />
         <div id='button_result_table'></div>
         <br />
         <br /><br /><br /><Link to="/contact">Contact (testing routing)</Link>
-      </header>
     </div>
   );
 }
