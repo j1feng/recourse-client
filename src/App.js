@@ -11,7 +11,6 @@ function App() {
       </header>
       <ActionForm />
         <br />
-        <div id='button_result_table'></div>
         <br />
         <br /><br /><br /><Link to="/contact">Contact (testing routing)</Link>
     </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, TextField, Select, MenuItem, InputLabel, FormControl, 
-    Box, FormHelperText, Container, Divider } from '@mui/material';
+    Box, FormHelperText, Container, Divider, Typography } from '@mui/material';
 
 let ActionForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -60,8 +60,11 @@ let ActionForm = () => {
         <div>
             <Container>
                 <Box sx={{ my: 3, mx: 2 }}>
-                    <h3>Credit Approval Prediction</h3>
-                    <b>If you fill in the form below, you will be predicted whether you will get credit or not. In case you are denied, a list of actions that are required to get accepted.</b>
+                    <Typography variant="h4">Credit Approval Prediction</Typography>
+                    <Typography variant="body1">
+                        Fill in the form below to see if you will be denied for credit or not. If you are denied, 
+                        a list of actions that are required to get accepted will be shown below.
+                    </Typography>
                 </Box>
                 <Divider variant="middle" />
                 `<form onSubmit={handleSubmit(onSubmit)}>
@@ -73,13 +76,13 @@ let ActionForm = () => {
                     noValidate
                     >
                         <FormControl sx={{ m: 1, minWidth: 120 }}>
-                            <TextField variant="outlined" type="number" label="Age" {...register("Age", {required: true, max: 100, min: 0})} />
+                            <TextField variant="outlined" type="number" label="Age" defaultValue={21} {...register("Age", {required: true, max: 100, min: 0})} />
                             <FormHelperText>Required</FormHelperText>
                         </FormControl>
 
                         <FormControl sx={{ m: 1, minWidth: 200 }}>
                             <InputLabel>Education Level</InputLabel>
-                            <Select label="Age" {...register("EducationLevel", { required: true })}>
+                            <Select defaultValue={2} {...register("EducationLevel", { required: true })}>
                             <MenuItem value="1">graduate school</MenuItem>
                             <MenuItem value="2">university</MenuItem>
                             <MenuItem value="3">high school</MenuItem>
@@ -90,7 +93,7 @@ let ActionForm = () => {
 
                         <FormControl sx={{ m: 1, minWidth: 200 }}>
                             <InputLabel>Martial Status</InputLabel>
-                            <Select {...register("Married", { required: true })}>
+                            <Select defaultValue={0} {...register("Married", { required: true })}>
                             <MenuItem value="1">Married</MenuItem>
                             <MenuItem value="0">Single</MenuItem>
                             </Select>
@@ -100,7 +103,7 @@ let ActionForm = () => {
 
                     <FormControl sx={{ m: 1, minWidth: 100, maxWidth: 200}}>
                         <p>Do you have any history of over due payments?</p>
-                        <Select {...register("HistoryOfOverduePayments", { required: true })}>
+                        <Select defaultValue={0} {...register("HistoryOfOverduePayments", { required: true })}>
                         <MenuItem value="1">Yes</MenuItem>
                         <MenuItem value="0">No</MenuItem>
                         </Select>
@@ -109,55 +112,55 @@ let ActionForm = () => {
 
                     <FormControl sx={{ m: 1, minWidth: 100, maxWidth: 200 }}>
                         <p>What is your maximum bill amount over the last 6 months?</p>
-                        <TextField variant="outlined" type="number" {...register("MaxBillAmountOverLast6Months", {required: true, min: 0})} />
+                        <TextField variant="outlined" type="number" defaultValue={2500} {...register("MaxBillAmountOverLast6Months", {required: true, min: 0})} />
                         <FormHelperText>Required</FormHelperText>
                     </FormControl>
 
                     <FormControl sx={{ m: 1, minWidth: 100, maxWidth: 200 }}>
                         <p>What is your maximum payment amount over the last 6 months?</p>
-                        <TextField variant="outlined" type="number" {...register("MaxPaymentAmountOverLast6Months", {required: true, min: 0})} />
+                        <TextField variant="outlined" type="number" defaultValue={2500} {...register("MaxPaymentAmountOverLast6Months", {required: true, min: 0})} />
                         <FormHelperText>Required</FormHelperText>
                     </FormControl>
                     
                     <FormControl sx={{ m: 1, minWidth: 100, maxWidth: 200 }}>
-                        <p>How many months did you do high spending over the last 6 months?</p>
-                        <TextField variant="outlined" type="number" {...register("MonthsWithHighSpendingOverLast6Months", {required: true, max: 6, min: 0})} />
+                        <p>How many months did you have high spending over the last 6 months?</p>
+                        <TextField variant="outlined" type="number" defaultValue={6} {...register("MonthsWithHighSpendingOverLast6Months", {required: true, max: 6, min: 0})} />
                         <FormHelperText>Required</FormHelperText>
                     </FormControl>
                     
                     <FormControl sx={{ m: 1, minWidth: 100, maxWidth: 200 }}>
-                        <p>How many months did you do low spending over the last 6 months?</p>
-                        <TextField variant="outlined" type="number" {...register("MonthsWithLowSpendingOverLast6Months", {required: true, max: 6, min: 0})} />
+                        <p>How many months did you have low spending over the last 6 months?</p>
+                        <TextField variant="outlined" type="number" defaultValue={0} {...register("MonthsWithLowSpendingOverLast6Months", {required: true, max: 6, min: 0})} />
                         <FormHelperText>Required</FormHelperText>
                     </FormControl>
                     
                     <FormControl sx={{ m: 1, minWidth: 100, maxWidth: 200 }}>
-                        <p>How many months did you have no money over the last 6 months?</p>
-                        <TextField variant="outlined" type="number" {...register("MonthsWithZeroBalanceOverLast6Months", {required: true, max: 6, min: 0})} />
+                        <p>How many months did you have no money in your bank account over the last 6 months?</p>
+                        <TextField variant="outlined" type="number" defaultValue={0} {...register("MonthsWithZeroBalanceOverLast6Months", {required: true, max: 6, min: 0})} />
                         <FormHelperText>Required</FormHelperText>
                     </FormControl>
                     
                     <FormControl sx={{ m: 1, minWidth: 100, maxWidth: 200 }}>
                         <p>What was your most recent bill amount?</p>
-                        <TextField variant="outlined" type="number" {...register("MostRecentBillAmount", {required: true, min: 0})} />
+                        <TextField variant="outlined" type="number" defaultValue={1000} {...register("MostRecentBillAmount", {required: true, min: 0})} />
                         <FormHelperText>Required</FormHelperText>
                     </FormControl>
                     
                     <FormControl sx={{ m: 1, minWidth: 100, maxWidth: 200 }}>
                         <p>What was your most recent payment amount?</p>
-                        <TextField variant="outlined" type="number" {...register("MostRecentPaymentAmount", {required: true, min: 0})} />
+                        <TextField variant="outlined" type="number" defaultValue={1000} {...register("MostRecentPaymentAmount", {required: true, min: 0})} />
                         <FormHelperText>Required</FormHelperText>
                     </FormControl>
                     
                     <FormControl sx={{ m: 1, minWidth: 100, maxWidth: 200 }}>
-                        <p>How many months did you have over due?</p>
-                        <TextField variant="outlined" type="number" {...register("TotalMonthsOverdue", {required: true, min: 0})} />
+                        <p>How many months did you have over dues at most?</p>
+                        <TextField variant="outlined" type="number" defaultValue={0} {...register("TotalMonthsOverdue", {required: true, min: 0})} />
                         <FormHelperText>Required</FormHelperText>
                     </FormControl>
                     
                     <FormControl sx={{ m: 1, minWidth: 100, maxWidth: 200 }}>
                         <p>How many times did you have over due?</p>
-                        <TextField variant="outlined" type="number" {...register("TotalOverdueCounts", {required: true, min: 0})} />
+                        <TextField variant="outlined" type="number" defaultValue={6} {...register("TotalOverdueCounts", {required: true, min: 0})} />
                         <FormHelperText>Required</FormHelperText>
                     </FormControl>
                                 
@@ -169,7 +172,7 @@ let ActionForm = () => {
 
                 <Divider variant="middle" />
                 
-                <h3>Credit: {(predicted===-1) ? "" : (predicted) ? "Accepted" : "Denied"}</h3>
+                <Typography variant="h4">Credit: {(predicted===-1) ? "" : (predicted) ? "Accepted" : "Denied"}</Typography>
                 </Container>
                 <Container maxWidth="sm">
                     <div id='button_result_table'></div>
